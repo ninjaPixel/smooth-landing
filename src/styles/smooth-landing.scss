@@ -17,6 +17,7 @@ $font-color-secondary-light: rgba(255, 255, 255, 0.87);
 $feature-border-color: $primary-color;
 $btn-bg-color: $secondary-color;
 $btn-color: $font-color-primary-light;
+$overview-seperation-padding-large-screen: 5.5rem;
 
 @mixin outline($width:1px,$pattern:dotted, $color:black) {
   // useful when debugging flexbox
@@ -168,6 +169,8 @@ body {
   @include font-size(2);
   color: black;
   padding: 0 1rem;
+  text-align: center;
+
 }
 
 .btn__cta {
@@ -224,12 +227,22 @@ body {
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
 
   @include font-size(1.6);
   @include large {
     flex: 1;
     border-right: 1px solid $feature-border-color;
-    padding-right: 1rem;
+    padding-right: $overview-seperation-padding-large-screen;
+    text-align: right;
+  }
+}
+
+.features__feature-overview__header__text {
+  align-self: center;
+  @include large {
+    align-self: flex-end;
   }
 }
 
@@ -238,8 +251,7 @@ body {
   max-height: 50vh;
   align-self: center;
   @include large {
-    align-self: flex-start;
-
+    align-self: flex-end;
   }
 }
 
@@ -247,6 +259,10 @@ body {
   color: $font-color-secondary-light;
   flex: 1;
   padding-top: 1rem;
+  align-self: center;
+  @include large {
+    align-self: flex-end;
+  }
 }
 
 .features__feature-overview__icon--sized {
@@ -263,7 +279,7 @@ body {
   padding: 1rem 0;
   @include large {
     flex: 1;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 $overview-seperation-padding-large-screen;
     border-bottom: none;
   }
 }
