@@ -37,6 +37,9 @@ Smooth Landing 🛬 uses Pug (formerly 'Jade') and SASS to improve the developer
 * [Pug](https://pugjs.org/api/getting-started.html)
 * [SASS](http://sass-lang.com/guide)
 
+To change the landing page, just edit `src/index.pug`. Images are kept in `dist/img` and the `index.html` page is built to the `dist` directory.
+To host a landing page, copy the `dist` directory to your web server.
+
 ### Contribution guidelines ###
 
 Pull requests welcomed.
