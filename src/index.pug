@@ -1,0 +1,59 @@
+mixin feature-with-icon(icon, title, description)
+    .features__feature-overview
+        .features__feature-overview__header
+            .features__feature-overview__header__text!=title
+            i(class!='fa features__feature-overview__icon features__feature-overview__icon--sized '+icon)
+        .features__feature-overview__copy
+            .features__feature-overview__copy__text!=description
+
+mixin feature-with-image(imgUrl,imgAlt, title, description)
+    .features__feature-overview
+        .features__feature-overview__header
+            .features__feature-overview__header__text!=title
+            img.features__feature-overview__image(src!=imgUrl alt!=imgAlt)
+        .features__feature-overview__copy
+            .features__feature-overview__copy__text!=description
+
+mixin cta(lead, buttonText, id, href)
+    .cta
+        .cta__text
+            p=lead
+        .btn.btn__cta(id=id)
+            a.link--btn(href=href)=buttonText
+
+mixin teamMember(imgSrc, imgAlt, name, text)
+    .team__member
+        img.team__member__photo(src!=imgSrc, alt!=imgAlt)
+        .team__member__details
+            .team__member__details__name!=name
+            .team__member__details__text!=text
+
+include templates/default-page
+//include ./templates/header.pug
+.hero
+    .hero__textblock
+        h1.hero__textblock__header Bang! Describe your product in just a few words
+        h2.hero__textblock__subheader If a visitor left this page now, they should be able to describe what you do.
+    .hero__image-container
+        img.hero__image(src="img/iphone-6.png" alt="iPhone screenshot of the app")
+.social-proof
+        .social-proof__holder
+            p.social-proof__quote Include social proof immediately after the hero section.
+            p.social-proof__author Frequent Flyer, ACME Corp.
++cta("Now, some encouraging text, and then:","Call to action", "cta-01", "https://github.com/ninjaPixel/smooth-landing")
+.features
+    +feature-with-icon("fa-magic", "Most people won\'t hit the first CTA", "So now you need to list your features and also address any objections that people may have with your product.")
+    +feature-with-image("img/iphone-6.png", "iPhone screen shot of the app", "Include lots of screenshots", "Do away with using generic stock images. Make sure that you tell your visitor why your product will make his or her life better. Don't prattle on about features; your reader doesn't have time to mentally convert your features into reasons to buy.")
+
+    +feature-with-icon("fa-align-left", "Each feature needs some copy", "Write a paragraph of no more than three sentences. Describe the feature and address a common objection. If you go beyond three sentences, less people will read.")
+    +feature-with-icon("fa-text-height", "Each feature needs a title", "Write a three-to-five word title describing the specific feature or value. Don't use vague language like \"Empower your life\" or \"Revolutionize your workflow.\" No, just bluntly describe what it is so visitors can decide whether it's relevant to them.")
+    +feature-with-icon("fa-code", "Make your own killer lander", "<a class='link' href=\"https://github.com/ninjaPixel/smooth-landing\">Fork the code</a> and create a lander for your own product. This boilerplate is designed to load fast and scores a performance rating of 97/100 with Google Lighthouse.")
++cta("The same encouraging text, again.","Call to action", "cta-02", "https://github.com/ninjaPixel/smooth-landing")
+.mission
+    //h1.misson_company Company Name.
+    p.mission__statement Some down-to-earth text on why this company is the one building the best solution to the visitor's problem. Don't be sales-y but don't be humble either. Remember you are marketing yourself; boast about your team's achievements.
+.team
+    +teamMember('img/rick.png', 'Rick Sanchez', 'Rick Sanchez', "Add some credibility by having a team section.")
+    +teamMember('img/morty.jpg', 'Morty Smith', 'Morty Smith', "Add some credibility by having a team section.")
+    //p Listen to <a href="https://www.indiehackers.com/podcast/017-julian-shapiro-of-bell-curve">Indie Hackers podcast #17, with Julian Shapiro of Bell Curve</a>. It's a mine field of information on growth hacking.
+include templates/foot
