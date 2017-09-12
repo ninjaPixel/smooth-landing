@@ -8,6 +8,8 @@ This repository provides the blocks and structure for you to create your own lan
 It follows [Julian Shapiro's guide to growth marketing](https://www.julian.com/learn/growth/landing-pages). Just
 swap out the text and images for your own.
 
+[-- VIEW THE DEMO HERE --](http://smoothlanding.ninjapixel.io/)
+
 In addition to following these best practices, the page is designed to load very fast and it scores a performance rating of 97/100 with Google Lighthouse.
 ![Google Lighthouse results](http://smoothlanding.ninjapixel.io/img/google-lighthouse.png)
 
