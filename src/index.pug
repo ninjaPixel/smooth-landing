@@ -18,8 +18,7 @@ mixin cta(lead, buttonText, id, href)
     .cta
         .cta__text
             p=lead
-        .btn.btn__cta(id=id)
-            a.link--btn(href=href)=buttonText
+        a.btn.btn__cta.link--btn(id=id href=href)=buttonText
 
 mixin teamMember(imgSrc, imgAlt, name, text)
     .team__member

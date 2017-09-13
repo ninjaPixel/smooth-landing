@@ -46,6 +46,10 @@ body {
   font-family: $helvetica;
 }
 
+em {
+  font-weight: bolder;
+}
+
 .link {
   padding-left: 2px;
   padding-right: 2px;
@@ -214,7 +218,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  padding: 2rem 1rem 0 1rem;
+  padding: 3rem 1rem 1rem 1rem;
 
   @include large {
     flex-direction: row;
@@ -322,6 +326,7 @@ body {
 .team__member {
   display: flex;
   padding-bottom: 1.3rem;
+  flex:1;
 }
 
 .team__member__photo {
@@ -329,8 +334,10 @@ body {
   height: 100px;
   width: 100px;
   @include large {
-    height: 300px;
-    width: 300px;
+    min-height:200px;
+    min-width:200px;
+    max-height: 300px;
+    max-width: 300px;
   }
 }
 
@@ -350,6 +357,5 @@ body {
 
 .team__member__details__text {
   @include font-size(1.0);
-
 }
 
